@@ -1,0 +1,6 @@
+%%writefile requirements.txt
+torch
+torchvision
+streamlit
+pillow
+scikit-learn
