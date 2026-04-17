@@ -118,7 +118,7 @@ with tab1:
 
 with tab2:
     st.write("Upload the picture of Bank/Post Office form:")
-    st.info("💡 Tips: Please crop and upload only the digit area. Make sure the digit is visible properly.")
+    st.info("💡 Tips: Please crop and upload only the digit area and Make sure the digit is visible properly.")
     uploaded = st.file_uploader("Upload Image", type=["png","jpg","jpeg"])
     if uploaded:
         image = Image.open(uploaded)
@@ -132,7 +132,7 @@ with tab2:
             with col2:
                 st.metric("Confidence", f"{conf*100:.1f}%")
             if conf < 0.7:
-                st.warning("⚠️ Confidence kam hai — better quality image try karein")
+                st.warning("⚠️ Low confidence — Draw again")
             else:
                 st.success("✅ High confidence prediction!")
             st.write("**All digits probability:**")
